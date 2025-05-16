@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from './pfp2.jpg';
+import CSRFImage from './csrf-attack.png';
+import AIimg from './ai-img.png';
 import { FaArrowUp, FaCode, FaLaptopCode, FaDatabase, FaShieldAlt, FaProjectDiagram, FaRobot } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
@@ -35,17 +37,17 @@ const App = () => {
       id: 1,
       title: "AI Proposal Generator",
       description: "Python application created during my internship at PSI to automate and enhance government contract proposal responses.",
-      image: "/api/placeholder/400/200",
+      image: AIimg,
       techStack: ["Python", "NLP", "AI", "Document Processing"],
       details: "This project involved developing a natural language processing system that could analyze RFP requirements and generate tailored responses by extracting relevant information from a knowledge base of past proposals. The system reduced response time by 60% while improving consistency and compliance."
     },
     {
       id: 2,
-      title: "Network Security Analyzer",
-      description: "A comprehensive tool for analyzing network traffic and identifying potential security vulnerabilities.",
-      image: "/api/placeholder/400/200",
-      techStack: ["Autopsy", "Wireshark", "Ghidra"],
-      details: "Developed as part of my computer security coursework, this tool integrates multiple forensic analysis techniques to provide a unified interface for network security monitoring. It features packet capture analysis, malware detection, and vulnerability scanning capabilities."
+      title: "Makeshift CSRF/XSS Attack",
+      description: "A HTML file that takes advantage of XSS vulnerabilities to launch a CSRF attack on a dummy website.",
+      image: CSRFImage,
+      techStack: ["HTML", "JS", "XSS"],
+      details: "Developed as part of my computer security coursework, this malicious, yet seemingly benign HTML file will upload an image to the website's image gallery, instantly upon being opened by a user who is logged into such website. It first takes advantage of an XSS vulnerability, then steals the user's session token to gain unauthorized access to the site."
     },
     {
       id: 3,
