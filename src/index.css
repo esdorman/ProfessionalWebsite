@@ -45,7 +45,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.5s ease;
+  transition: background-color 0.1s ease;
 }
 
 .header-content {
@@ -286,6 +286,7 @@ section {
 .skill-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
 }
 
 .skill-icon {
@@ -515,20 +516,77 @@ section {
   line-height: 1.7;
 }
 
+/* Interests Section */
+.interests {
+  background-color: rgba(245, 245, 245, 0.8);
+  padding: 80px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.interest-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.interest-img {
+  height: 200px;
+  overflow: hidden;
+}
+
+.interest-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.interest-card:hover .interest-img img {
+  transform: scale(1.1);
+}
+
+.interest-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  padding: 20px 20px 10px;
+  margin: 0;
+}
+
+.interest-card p {
+  color: var(--gray);
+  padding: 0 20px 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
 /* Contact Section */
 .contact {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+}
+
+.contact .section-title h2 {
   color: white;
   position: relative;
   z-index: 2;
 }
 
-.contact .section-title h2 {
-  color: white;
-}
-
 .contact .section-title h2:after {
   background: white;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-content {
@@ -536,16 +594,22 @@ section {
   justify-content: space-between;
   max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info {
   flex: 1;
   padding-right: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info p {
@@ -570,6 +634,8 @@ section {
 .social-links {
   display: flex;
   gap: 15px;
+  position: relative;
+  z-index: 2;
 }
 
 .social-links a {
@@ -582,6 +648,7 @@ section {
   border-radius: 50%;
   color: white;
   transition: all 0.3s ease;
+  background: var(--secondary);
 }
 
 .social-links a:hover {
@@ -669,6 +736,8 @@ footer {
   color: white;
   padding: 30px 0;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 footer p {
@@ -789,6 +858,23 @@ footer p {
 
 .dark .tech-stack span {
   color: #121212;
+}
+
+/* Dark Mode */
+.dark .interests {
+  background-color: #121212;
+}
+
+.dark .interest-card {
+  background-color: #333;
+}
+
+.dark .interest-card h3 {
+  color: #66b2ff;
+}
+
+.dark .interest-card p {
+  color: #eee;
 }
 
 .dark .contact-form {

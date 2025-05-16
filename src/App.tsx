@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from './pfp2.jpg';
 import CSRFImage from './csrf-attack.png';
 import AIimg from './ai-img.png';
+import Euchre from './euchre.jpg';
 import { FaArrowUp, FaCode, FaLaptopCode, FaDatabase, FaShieldAlt, FaProjectDiagram, FaRobot } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
@@ -35,7 +36,7 @@ const App = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "AI Proposal Generator",
+      title: "AI Proposal Response Generator",
       description: "Python application created during my internship at PSI to automate and enhance government contract proposal responses.",
       image: AIimg,
       techStack: ["Python", "NLP", "AI", "Document Processing"],
@@ -51,11 +52,11 @@ const App = () => {
     },
     {
       id: 3,
-      title: "Algorithm Visualizer",
-      description: "Interactive web application that visualizes various sorting and pathfinding algorithms.",
-      image: "/api/placeholder/400/200",
-      techStack: ["JavaScript", "HTML5", "CSS3", "Data Structures"],
-      details: "This educational tool helps students understand how algorithms work by providing step-by-step visualizations of common sorting and pathfinding algorithms. Users can adjust parameters and see how different inputs affect algorithm performance in real-time."
+      title: "Euchre Card Game",
+      description: "Recreated the Euchre card game. you can play with others or with bots",
+      image: Euchre,
+      techStack: ["C++", "VSCode"],
+      details: "A recreation of the card game Euchre, where you can play with 3 other people, or by yourself up to four bots. Follows all the complex patterns and logic that the original game contains."
     }
   ];
 
@@ -492,6 +493,105 @@ const App = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <motion.section
+        id="interests"
+        className='interests'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <div className="container">
+          <div className="section-title">
+            <motion.h2
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              My Interests
+            </motion.h2>
+          </div>
+          <div className="interests-grid">
+            {/* Basketball */}
+            <motion.div
+              className="interest-card"
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="interest-img">
+                <img
+                  src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Basketball"
+                />
+              </div>
+              <h3>Basketball</h3>
+              <p>I love shooting hoops and keeping up with the NBA, been playing casually ever since I was little.</p>
+            </motion.div>
+
+            {/* Ultimate Frisbee */}
+            <motion.div
+              className="interest-card"
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="interest-img">
+                <img
+                  src="https://images.unsplash.com/photo-1585953074857-19f89c2ed52f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Ultimate Frisbee"
+                />
+              </div>
+              <h3>Ultimate Frisbee</h3>
+              <p>Competitive player from elementary school through high school. Love the teamwork and positivity of everyone involved.</p>
+            </motion.div>
+
+            {/* PC Building */}
+            <motion.div
+              className="interest-card"
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="interest-img">
+                <img
+                  src="https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                  alt="Custom PC Building"
+                />
+              </div>
+              <h3>PC Building</h3>
+              <p>Built 4+ custom rigs for myself, friends and family. Specialize in high-performance desktop PCs; modified countless others</p>
+            </motion.div>
+
+            {/* Documentaries */}
+            <motion.div
+              className="interest-card"
+              whileHover={{ y: -5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="interest-img">
+                <img
+                  src="https://images.unsplash.com/photo-1679094837433-32484a621c74?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Documentaries"
+                />
+              </div>
+              <h3>Documentaries</h3>
+              <p>Fascinated by deep-dives into tech, history, and science, and other random/goofy topics.</p>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
 
       {/* Contact Section */}
       <section className="contact" id="contact">
