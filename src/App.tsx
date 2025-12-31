@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import profileImage from './pfp2.jpg';
 import CSRFImage from './csrf-attack.png';
 import AIimg from './ai-img.png';
+import emailjs from 'emailjs-com';
 import Euchre from './euchre.jpg';
 import { FaArrowUp, FaCode, FaLaptopCode, FaDatabase, FaShieldAlt, FaProjectDiagram, FaRobot } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
@@ -129,22 +130,33 @@ const App = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Here you would typically send the form data to a server
-      console.log('Form submitted:', formData);
-      setFormSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
 
-      // Reset form submission status after 3 seconds
-      setTimeout(() => {
-        setFormSubmitted(false);
-      }, 3000);
-    }
+    if (!validateForm()) return;
+
+    emailjs.send(
+      'service_ljx1s0p',       //
+      'template_5lsb77b',      // ← Replace with your actual template ID
+      formData,                // ← form values
+      'SiOXkBKm5MnKFFCDP'
+    )
+      .then(() => {
+        console.log('Email sent successfully!');
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+
+        setTimeout(() => {
+          setFormSubmitted(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('Email failed:', error);
+        alert('Something went wrong. Please try again later.');
+      });
   };
 
   return (
@@ -156,7 +168,23 @@ const App = () => {
           className="theme-toggle"
           aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         >
-          {darkMode ? '☀️' : '🌙'}
+          {darkMode ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          )}
         </button>
         <div className="container header-content">
           <motion.div
@@ -169,7 +197,7 @@ const App = () => {
           </motion.div>
           <nav>
             <ul>
-              {['home', 'about', 'skills', 'experience', 'projects', 'contact'].map((item) => (
+              {['home', 'about', 'skills', 'experience', 'projects', 'interests', 'contact'].map((item) => (
                 <motion.li
                   key={item}
                   whileHover={{ scale: 1.05 }}
@@ -355,8 +383,8 @@ const App = () => {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h3>Computer Science Major</h3>
-                <span className="date">2021 - Present, University of Michigan</span>
+                <h3>Computer Science BSE</h3>
+                <span className="date">2022 - Present, University of Michigan</span>
                 <p>
                   Pursuing a Bachelor's degree in Computer Science with a focus on cybersecurity and software
                   engineering.
@@ -586,8 +614,8 @@ const App = () => {
                   alt="Documentaries"
                 />
               </div>
-              <h3>Documentaries</h3>
-              <p>Fascinated by deep-dives into tech, history, and science, and other random/goofy topics.</p>
+              <h3>YouTube Documentaries</h3>
+              <p>Fascinated by deep-dives into tech, history, and science, and other random/goofy topics. Favorite channels: Fern, Qxir, Mustard, etc.</p>
             </motion.div>
           </div>
         </div>
