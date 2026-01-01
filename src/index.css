@@ -765,19 +765,28 @@ footer p {
   top: 20px;
   left: 20px;
   z-index: 1100;
-  background: transparent;
-  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--secondary);
   color: white;
-  padding: 6px 14px;
-  font-weight: 500;
-  border-radius: 20px;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   background: white;
-  color: var(--primary);
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* Dark Mode Styles */

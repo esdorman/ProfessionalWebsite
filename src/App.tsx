@@ -56,8 +56,16 @@ const App = () => {
       title: "Euchre Card Game",
       description: "Recreated the Euchre card game. you can play with others or with bots",
       image: Euchre,
-      techStack: ["C++", "VSCode"],
+      techStack: ["C++"],
       details: "A recreation of the card game Euchre, where you can play with 3 other people, or by yourself up to four bots. Follows all the complex patterns and logic that the original game contains."
+    },
+    {
+      id: 4,
+      title: "LC2K Pipelined Implementation",
+      description: "Developed a cycle-accurate behavioral simulator for a pipelined implementation of the LC-2K, complete with data forwarding and simple branch prediction.",
+      image: Euchre,
+      techStack: ["C", "ARM Assembly"],
+      details: "Wrote code that implements the basic LC2K instructions on a simulated basics structure of a pipeline processor (5 stages, plus all the componenets). In other words, it inputs assembly instructions, and outputs the meory states of everything afterwards."
     }
   ];
 
@@ -424,8 +432,8 @@ const App = () => {
                 viewport={{ once: true }}
               >
                 <h3>Tech Intern</h3>
-                <span className="date">Summer 2025, ?</span>
-                <p>TBD</p>
+                <span className="date">Summer 2025, Planned Systems International</span>
+                <p>Developed Powershell & PowerAutmate scripts for administrative purposes. Worked alongside the Chief Information Officer (CIO) during development.</p>
               </motion.div>
             </div>
           </div>
