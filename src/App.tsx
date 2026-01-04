@@ -5,6 +5,9 @@ import CSRFImage from './csrf-attack.png';
 import AIimg from './ai-img.png';
 import emailjs from 'emailjs-com';
 import Euchre from './euchre.jpg';
+import Delta from './delta.jpeg';
+import Pipeline from './pipeline.jpg';
+import Liberapay from './liberapay.png';
 import { FaArrowUp, FaCode, FaLaptopCode, FaDatabase, FaShieldAlt, FaProjectDiagram, FaRobot } from 'react-icons/fa';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 
@@ -18,7 +21,7 @@ interface Project {
 }
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [formData, setFormData] = useState({
@@ -63,9 +66,25 @@ const App = () => {
       id: 4,
       title: "LC2K Pipelined Implementation",
       description: "Developed a cycle-accurate behavioral simulator for a pipelined implementation of the LC-2K, complete with data forwarding and simple branch prediction.",
-      image: Euchre,
+      image: Pipeline,
       techStack: ["C", "ARM Assembly"],
       details: "Wrote code that implements the basic LC2K instructions on a simulated basics structure of a pipeline processor (5 stages, plus all the componenets). In other words, it inputs assembly instructions, and outputs the meory states of everything afterwards."
+    },
+    {
+      id: 5,
+      title: "Debugging Automation",
+      description: "Developed two debugging support tools to reduce the effort associated with software maintenance.",
+      image: Delta,
+      techStack: ["Python"],
+      details: "Uses delta debugging to to find a minimal interesting subset of a given set."
+    },
+    {
+      id: 6,
+      title: "Contribution to Open Source Project",
+      description: "I developed and locally tested fixes for two issues plauging an open source donation page (Liberapay).",
+      image: Liberapay,
+      techStack: ["Python", "HTML"],
+      details: "Fixed incorrect error handling when inputting prices, as well as improving the html layout of the FAQ page."
     }
   ];
 
@@ -75,7 +94,7 @@ const App = () => {
     { name: "Databases", icon: <FaDatabase />, items: ["SQL", "Access", "Excel"] },
     { name: "Computer Security", icon: <FaShieldAlt />, items: ["Ghidra", "Wireshark", "Autopsy"] },
     { name: "Low Level Languages", icon: <FaProjectDiagram />, items: ["ARM (Legv8)", "x86"] },
-    { name: "Artificial Intelligence", icon: <FaRobot />, items: ["Machine Learning"] }
+    { name: "Artificial Intelligence", icon: <FaRobot />, items: ["PyTorch"] }
   ];
 
   useEffect(() => {
