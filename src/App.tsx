@@ -413,11 +413,11 @@ const App = () => {
                 <h3>Computer Science BSE</h3>
                 <span className="date">2022 - Present, University of Michigan</span>
                 <p>
-                  Pursuing a Bachelor's degree in Computer Science with a focus on cybersecurity and software
-                  engineering.
+                  Pursuing a Bachelor's degree in Computer Science with a focus software
+                  engineering and/or cybersecurity.
                 </p>
                 <p>
-                  Completed advanced coursework in many classes such as Data Structures & Algorithms, Computer
+                  Completed advanced coursework in many classes such as Machine Learning, Software Engineering, Data Structures & Algorithms, Computer
                   Networking and Security.
                 </p>
               </motion.div>
